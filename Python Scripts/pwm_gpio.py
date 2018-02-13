@@ -6,5 +6,8 @@ GPIO.setup(13,GPIO.OUT)
 def gpio(x,y):
     X = (math.fabs(x)/255)*100
     Y = (math.fabs(y)/255)*100
-    GPIO.PWM(18,X)
-    GPIO.PWM(13,Y)
+    p=GPIO.PWM(18,100)
+    q=GPIO.PWM(13,100)
+    p.ChangeDutyCycle(X)
+    q.ChangeDutyCycle(Y)
+
